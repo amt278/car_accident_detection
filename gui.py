@@ -47,7 +47,7 @@ def main():
     
     # File upload section
     st.header("Upload Video")
-    video_file = st.file_uploader("Choose a video file", type=["mp4"])
+    video_file = st.file_uploader("Choose a video file", type=["mp4", "mov", "avi"])
     
     if video_file is not None:
         # Create a temporary directory to store the uploaded video
@@ -58,9 +58,6 @@ def main():
         with open(video_path, "wb") as f:
             f.write(video_file.read())
         
-        # Display the uploaded video
-        # video = Image.open(video_path)
-        # st.video(video)
         
         # Process the video
         if st.button("Process Video"):
@@ -78,10 +75,10 @@ def main():
             	video_bytes = open(f'output/{output_path}.mp4', 'rb').read()
             	st.video(video_bytes)
         
-        st.write('Sponsored by **Ain Shams University**')
+    
     
     st.sidebar.info("This is a demo app for deep learning video processing to detect accidents in roads with YOLOv8 model.")
-    st.sidebar.write('**Made by**')
+    st.sidebar.write('**Developed by**')
     st.sidebar.write('*Tarek Ashraf Mahmoud*')
     st.sidebar.write('*Adham Mohamed Tawfik*')
     st.sidebar.write('*Osama Anter Afifi*')
@@ -94,6 +91,9 @@ def main():
     st.sidebar.write('**Under Supervision**')
     st.sidebar.write('*Dr. Ayat Mohammed*')
     st.sidebar.write('*TA. Marwa Shams*')
+    st.sidebar.write('')
+    st.sidebar.write('')
+    st.sidebar.write('Sponsored by **Ain Shams University**')
     
 if __name__ == "__main__":
     main()
