@@ -8,7 +8,7 @@ from ultralytics import YOLO
 import cv2
 import random
 
-# Load your deep learning model
+# Load YOLO model
 def load_model():
     model = YOLO('YOLOv8.pt')
     return model
